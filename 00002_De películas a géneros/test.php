@@ -5,7 +5,7 @@ public function testPelicula(): void {
   
   $this->assertTrue($pelicula->getPrimaryKey() === "id", "La primary key de la tabla de peliculas debe llamarse 'id'"); 
   
-  $this->assertTrue($pelicula->getTimestamps() === true, "Es necesario aclarar que la tabla de generos si tiene los timestamps");
+  $this->assertTrue($pelicula->getTimestamps() === true, "Es necesario aclarar que la tabla de peliculas si tiene los timestamps");
   
   $this->assertTrue(is_array($pelicula->getGuarded()), "El atributo guarded debe ser un array");
   

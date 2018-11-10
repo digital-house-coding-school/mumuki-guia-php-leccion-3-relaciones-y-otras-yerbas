@@ -1,6 +1,6 @@
 Vamos a seguir completando la clase `Pelicula`, en este caso para indicar su relación con la clase `Actor`.
 
-Para esto, te pedimos que agregues un método llamado `actores` que retornará las películas asociados mediante el método `$this->belongsToMany` ya que la relación en este caso es de muchos a muchos.
+Para esto, te pedimos que agregues un método llamado `actores` que retornará los actores asociados mediante el método `$this->belongsToMany` ya que la relación en este caso es de muchos a muchos.
 
 No olvides que `belongsToMany` recibe cuatro parámetros:
 
