@@ -29,9 +29,9 @@ public function testActor(): void {
   
   $this->assertTrue($peliculas[0] === "App\Pelicula", "Se esperaba que el primer parámetro recibido por belongsToMany diga 'App\Pelicula'");
   
-  $this->assertTrue($actores[1] === "actor_movie", "Se esperaba que el segundo parámetro recibido por belongsToMany diga 'actor_movie' haciendo referencia a la tabla intermedia");
+  $this->assertTrue($peliculas[1] === "actor_movie", "Se esperaba que el segundo parámetro recibido por belongsToMany diga 'actor_movie' haciendo referencia a la tabla intermedia");
   
-  $this->assertTrue($actores[2] === "actor_id", "Se esperaba que el tercer parámetro recibido por belongsToMany diga 'actor_id' haciendo referencia a la clave foránea a la clase Actor");
+  $this->assertTrue($peliculas[2] === "actor_id", "Se esperaba que el tercer parámetro recibido por belongsToMany diga 'actor_id' haciendo referencia a la clave foránea a la clase Actor");
   
-  $this->assertTrue($actores[3] === "movie_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'movie_id' haciendo referencia a la clave foránea a la clase Pelicula");
+  $this->assertTrue($peliculas[3] === "movie_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'movie_id' haciendo referencia a la clave foránea a la clase Pelicula");
 }
