@@ -21,7 +21,7 @@ public function testGenero(): void {
   
   $this->assertTrue(is_string($peliculas[0]), "El primer parámetro enviado a hasMany debe ser un string");
   
-  $this->assertTrue(is_string($peliculas[0]), "El segundo parámetro enviado a hasManny debe ser un string");
+  $this->assertTrue(is_string($peliculas[1]), "El segundo parámetro enviado a hasManny debe ser un string");
   
   $this->assertTrue($peliculas[0] === "App\Pelicula", "Se esperaba que el primer parámetro recibido por hasMany diga 'App\Pelicula'");
   

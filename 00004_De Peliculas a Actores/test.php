@@ -31,7 +31,21 @@ public function testPelicula(): void {
   
   $this->assertTrue(is_string($genero[0]), "El primer parámetro enviado a belongsTo debe ser un string");
   
-  $this->assertTrue(is_string($genero[1]), "El segundo parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($genero[0]), "El segundo parámetro enviado a belongsTo debe ser un string");
+  
+  $this->assertTrue($genero[0] === "App\Genero", "Se esperaba que el primer parámetro recibido por belongsTo diga 'App\Genero'");
+  
+  $this->assertTrue($genero[1] === "genre_id", "Se esperaba que el segundo parámetro recibido por belongsTo diga 'genre_id'");
+  
+  $actores = $pelicula->actores();
+  
+  $this->assertTrue($pelicula->belongsToMany, "La función actores debe llamar a belongsToMany");
+  
+  $this->assertTrue(is_array($actores) && count($actores) == 4,"Recordá que el método actores debe RETORNAR el resultado de belongsToMany");
+  
+  $this->assertTrue(is_string($genero[0]), "El primer parámetro enviado a belongsTo debe ser un string");
+  
+  $this->assertTrue(is_string($genero[0]), "El segundo parámetro enviado a belongsTo debe ser un string");
   
   $this->assertTrue($genero[0] === "App\Genero", "Se esperaba que el primer parámetro recibido por belongsTo diga 'App\Genero'");
   
