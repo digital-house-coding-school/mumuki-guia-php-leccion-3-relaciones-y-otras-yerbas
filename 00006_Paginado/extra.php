@@ -17,7 +17,7 @@ function view($route, $vac = []) {
     
     if ($consulta instanceof Consulta == false) {
       
-      throw new Exception("¿Estas utilizando una consulta de Eloquent?");
+      throw new Exception("¿Estas utilizando paginate?");
     }
     
     if ($consulta->table != "movies") {
