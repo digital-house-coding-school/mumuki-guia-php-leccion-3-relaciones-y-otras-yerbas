@@ -8,7 +8,7 @@ function view($route, $vac = []) {
   
   $pasePorView = true;
   
-  if ($route == "listadoPeliculas") {
+  if ($route == "buenasPeliculas") {
     if (count($vac) !== 1) {
       throw new Exception('Deberías compartir una variable (y solo una) con la vista');
     }
@@ -52,7 +52,7 @@ function view($route, $vac = []) {
     
     
   } else {
-    throw new Exception("El archivo de vista debe llamarse listadoPeliculas");
+    throw new Exception("El archivo de vista debe llamarse buenasPeliculas");
   }
   
   return $route;
