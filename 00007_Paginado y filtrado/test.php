@@ -6,7 +6,7 @@ public function testPaginadoYFiltro(): void {
   $pc = new PeliculasController();
   
   try {
-    $resul = $pc->listado();
+    $resul = $pc->buenasPeliculas();
   } catch(Exception $e) {
     $this->assertTrue(false, $e->getMessage());
   }
