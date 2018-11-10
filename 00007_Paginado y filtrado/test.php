@@ -1,4 +1,4 @@
-public function testPaginado(): void {
+public function testPaginadoYFiltro(): void {
   global $pasePorView;
   
   $pasePorView = false;
