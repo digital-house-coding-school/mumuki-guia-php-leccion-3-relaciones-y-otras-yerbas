@@ -66,6 +66,76 @@ class Controller {
     global $pasePorValidate;
     
     $pasePorValidate = true;
+    
+    if (count($reglas) != 3) {
+      throw new Exception("Recordá que deberías validar 3 campos y por eso, el array de reglas debería tener 3 posiciones");
+    }
+    
+    if (!isset($reglas["title"])) {
+      throw new Exception("Falta la regla para validar el campo title");
+    }
+    if (!isset($reglas["rating"])) {
+      throw new Exception("Falta la regla para validar el campo rating");
+    }
+    if (!isset($reglas["awards"])) {
+      throw new Exception("Falta la regla para validar el campo awards");
+    }
+    
+    $reglasTitle = explode("|", $reglas["title"]);
+    $reglasRating = explode("|", $reglas["rating"]);
+    $reglasAwards = explode("|", $reglas["awards"]);
+    
+    if (count($reglasTitle) != 3) {
+      throw new Exception("Debería haber 3 reglas para validar el titulo separadas por el caracter |");
+    }
+    
+    if (count($reglasRating) != 4) {
+      throw new Exception("Debería haber 4 reglas para validar el rating separadas por el caracter |");
+    }
+    
+     if (count($reglasAwards) != 3) {
+      throw new Exception("Debería haber 3 reglas para validar el rating separadas por el caracter |");
+    }
+    
+    if (!in_array("required", $reglasTitle)) {
+      throw new Exception("Falta la regla required para validar el titulo");
+    }
+    
+    if (!in_array("max:255", $reglasTitle)) {
+      throw new Exception("Falta la regla max:255 para validar el titulo");
+    }
+    
+    if (!in_array("unique:movies,title", $reglasTitle)) {
+      throw new Exception("Falta la regla unique:movies,title para validar el titulo");
+    }
+    
+    if (!in_array("required", $reglasRating)) {
+      throw new Exception("Falta la regla required para validar el rating");
+    }
+    
+    if (!in_array("numeric", $reglasRating)) {
+      throw new Exception("Falta la regla numeric para validar el rating");
+    }
+    
+    if (!in_array("min:0", $reglasRating)) {
+      throw new Exception("Falta la regla min:0 para validar el rating");
+    }
+    
+    if (!in_array("max:10", $reglasRating)) {
+      throw new Exception("Falta la regla max:10 para validar el rating");
+    }
+    
+    if (!in_array("required", $reglasAwards)) {
+      throw new Exception("Falta la regla required para validar los premios");
+    }
+    
+    if (!in_array("integer", $reglasAwards)) {
+      throw new Exception("Falta la regla integer para validar los premios");
+    }
+      
+    if (!in_array("min:0", $reglasAwards)) {
+      throw new Exception("Falta la regla min:0 para validar los premios");
+    }
   }
 }
 
