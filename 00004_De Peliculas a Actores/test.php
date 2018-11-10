@@ -45,9 +45,9 @@ public function testPelicula(): void {
   
   $this->assertTrue(is_array($actores) && count($actores) == 4,"Recordá que el método actores debe RETORNAR el resultado de belongsToMany");
   
-  $this->assertTrue(is_string($actores[0]), "El primer parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($actores[0]), "El primer parámetro enviado a belongsToMany debe ser un string");
   
-  $this->assertTrue(is_string($actores[1]), "El segundo parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($actores[1]), "El segundo parámetro enviado a belongsToMany debe ser un string");
   
     $this->assertTrue(is_string($actores[2]), "El tercer parámetro enviado a belongsToMany debe ser un string");
   
