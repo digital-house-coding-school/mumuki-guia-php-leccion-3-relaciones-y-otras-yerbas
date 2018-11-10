@@ -29,9 +29,9 @@ public function testPelicula(): void {
   
   $this->assertTrue(is_array($genero) && count($genero) == 2,"Recordá que el método genero debe RETORNAR el resultado de belongsTo");
   
-  $this->assertTrue(is_string($genero[0]), "El primer parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($genero[0]), "El primer parámetro enviado a belongsToMany debe ser un string");
   
-  $this->assertTrue(is_string($genero[0]), "El segundo parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($genero[1]), "El segundo parámetro enviado a belongsToMany debe ser un string");
   
   $this->assertTrue($genero[0] === "App\Genero", "Se esperaba que el primer parámetro recibido por belongsTo diga 'App\Genero'");
   
@@ -43,11 +43,19 @@ public function testPelicula(): void {
   
   $this->assertTrue(is_array($actores) && count($actores) == 4,"Recordá que el método actores debe RETORNAR el resultado de belongsToMany");
   
-  $this->assertTrue(is_string($genero[0]), "El primer parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($actores[0]), "El primer parámetro enviado a belongsTo debe ser un string");
   
-  $this->assertTrue(is_string($genero[0]), "El segundo parámetro enviado a belongsTo debe ser un string");
+  $this->assertTrue(is_string($actores[1]), "El segundo parámetro enviado a belongsTo debe ser un string");
   
-  $this->assertTrue($genero[0] === "App\Genero", "Se esperaba que el primer parámetro recibido por belongsTo diga 'App\Genero'");
+    $this->assertTrue(is_string($actores[2]), "El tercer parámetro enviado a belongsToMany debe ser un string");
   
-  $this->assertTrue($genero[1] === "genre_id", "Se esperaba que el segundo parámetro recibido por belongsTo diga 'genre_id'");
+  $this->assertTrue(is_string($actores[3]), "El cuarto parámetro enviado a belongsToMany debe ser un string");
+  
+  $this->assertTrue($actores[0] === "App\Actor", "Se esperaba que el primer parámetro recibido por belongsToMany diga 'App\Actor'");
+  
+  $this->assertTrue($actores[1] === "actor_movie", "Se esperaba que el segundo parámetro recibido por belongsToMany diga 'actor_movie' haciendo referencia a la tabla intermedia");
+  
+  $this->assertTrue($actores[2] === "movie_id", "Se esperaba que el tercer parámetro recibido por belongsToMany diga 'movie_id' haciendo referencia a la clave foránea a la clase Pelicula");
+  
+  $this->assertTrue($actores[3] === "actor_id", "Se esperaba que el cuarto parámetro recibido por belongsToMany diga 'actor_id' haciendo referencia a la clave foránea a la clase Actor");
 }
