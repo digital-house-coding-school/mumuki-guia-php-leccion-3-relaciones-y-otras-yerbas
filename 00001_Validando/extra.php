@@ -81,6 +81,16 @@ class Controller {
       throw new Exception("Falta la regla para validar el campo awards");
     }
     
+    if (!is_string($reglas["title"])) {
+      throw new Exception("Las reglas para validar el título deben estar en formato string");
+    }
+    if (!is_string($reglas["rating"])) {
+      throw new Exception("Las reglas para validar el rating deben estar en formato string");
+    }
+    if (!is_string($reglas["awards"])) {
+      throw new Exception("Las reglas para validar los premios deben estar en formato string");
+    }
+    
     $reglasTitle = explode("|", $reglas["title"]);
     $reglasRating = explode("|", $reglas["rating"]);
     $reglasAwards = explode("|", $reglas["awards"]);
