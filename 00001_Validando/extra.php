@@ -62,7 +62,7 @@ class Route {
 }
 
 class Controller {
-  public function validate(Request $req, $reglas, $mensajes = []) {
+  public function validate(Request $req, Array $reglas, Array $mensajes = []) {
     global $pasePorValidate;
     
     $pasePorValidate = true;
