@@ -37,6 +37,8 @@ public function testPelicula(): void {
   
   $this->assertTrue($genero[1] === "genre_id", "Se esperaba que el segundo parámetro recibido por belongsTo diga 'genre_id'");
   
+  $this->assertTrue(method_exists("Pelicula", "actores"), "Falta el método actores en la clase Pelicula");
+  
   $actores = $pelicula->actores();
   
   $this->assertTrue($pelicula->belongsToMany, "La función actores debe llamar a belongsToMany");
