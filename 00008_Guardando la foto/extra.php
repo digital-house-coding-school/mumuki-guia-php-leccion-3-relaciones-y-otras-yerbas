@@ -256,7 +256,12 @@ class Pelicula extends Model {
     if (!isset($this->poster)) {
       throw new Exception("La película que esta siendo almacenada no tiene poster");
     }
-    var_dump($this->poster, $request->posterSecreto);exit;
+    
+    if ($this->poster === "/public/" . $this->posterSecreto) {
+    
+      throw new Exception("Estas asignando en la columna poster toda la ruta del archivo y no solo el nombre. No olvides usar basename antes");
+    }
+    
     if ($this->poster !== $request->posterSecreto) {
       throw new Exception("La película que esta siendo almacenada no tiene asignada el poster que fue almacenado");
     }
