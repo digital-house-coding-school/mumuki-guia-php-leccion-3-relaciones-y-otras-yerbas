@@ -348,6 +348,6 @@ class Request implements ArrayAccess {
       throw new Exception("Deberías almacenar el archivo en la carpeta public");
     }
     
-    return "/public/" . $this->poster;
+    return "/public/" . $this->posterSecreto;
   }
 }
