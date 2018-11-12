@@ -42,6 +42,8 @@ public function testValidacion(): void {
   
   $this->assertTrue($pasePorSave, "Mmm...parecería que no estas almacenando nada");
   
+  $this->assertTrue($request->pasePorStore, "Mmm...parecería que no estas almacenando la imagen");
+  
   $this->assertTrue($pasePorRedirect, "Parecería que no estas llamando a la función redirect");
   
   $this->assertTrue(is_string($resul), "¿Estas retornando el resultado de la funcion redirect?");

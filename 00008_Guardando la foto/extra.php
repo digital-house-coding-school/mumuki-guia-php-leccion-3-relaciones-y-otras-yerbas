@@ -335,6 +335,10 @@ class Request implements ArrayAccess {
   public function store($name) {
     $this->pasePorStore = true;
     
+    if (!$this->pasePorFile) {
+      throw new Exception("El método store debería ejecutarse luego del método file");
+    }
+    
     if (!is_string($name)) {
       throw new Exception("El método store debería recibir un string");
     }
