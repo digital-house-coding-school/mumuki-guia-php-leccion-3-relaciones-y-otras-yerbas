@@ -1,4 +1,4 @@
-public function testValidacion(): void {
+public function testStorage(): void {
   global $pasePorRedirect;
   global $request;
   global $pasePorSave;
@@ -21,7 +21,7 @@ public function testValidacion(): void {
   $request->title = "El rey león";
   $request->rating = 9.2;
   $request->awards = 5;
-  $request->poster = "elreyleon.jpg";
+  $request->posterSecreto = "elreyleon.jpg";
   
   try {
     $resul = $pc->almacenar($request);
@@ -32,7 +32,7 @@ public function testValidacion(): void {
   $request->title = "Wall-e";
   $request->rating = 8.1;
   $request->awards = 4;
-  $request->poster = "walle.jpg";
+  $request->posterSecreto = "walle.jpg";
   
   try {
     $resul = $pc->almacenar($request);

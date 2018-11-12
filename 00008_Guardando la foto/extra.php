@@ -256,7 +256,7 @@ class Pelicula extends Model {
     if (!isset($this->poster)) {
       throw new Exception("La película que esta siendo almacenada no tiene poster");
     }
-    if ($this->poster !== $request->poster) {
+    if ($this->poster !== $request->posterSecreto) {
       throw new Exception("La película que esta siendo almacenada no tiene asignada el poster que fue almacenado");
     }
   }
