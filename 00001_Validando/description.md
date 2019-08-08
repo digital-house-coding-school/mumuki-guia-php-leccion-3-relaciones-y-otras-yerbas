@@ -21,4 +21,4 @@ Esta vez sin embargo te vamos a pedir también que lo valides previo a almacenar
 
 Te dejamos un link a mano para que puedas revisar las reglas de validación de Laravel:
 
-[https://laravel.com/docs/master/validation#available-validation-rules](https://laravel.com/docs/master/validation#available-validation-rules)
+[https://laravel.com/docs/5.1/validation](https://laravel.com/docs/5.1/validation)
